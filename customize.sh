@@ -19,3 +19,6 @@ sed -i "s/OpenWrt /Lunseil build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" open
 
 #5. 修改主机名
 sed -i '/uci commit system/i\uci set system.@system[0].hostname='OpenWrt'' openwrt/package/lean/default-settings/files/zzz-default-settings
+
+#6. 替换默认主题为 luci-theme-netgear
+sed -i 's/luci-theme-bootstrap/luci-theme-netgear/' feeds/luci/collections/luci/Makefile
